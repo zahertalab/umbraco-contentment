@@ -48,7 +48,7 @@ namespace Umbraco.Community.Contentment.DataEditors
         {
             new NotesConfigurationField(@"<div class=""alert alert-info"">
 <p><strong>A note about your SQL query.</strong></p>
-<p>Your SQL query should be designed to return a minimum of 2 columns, (and a maximum of 5 columns). These columns will be used to populate the List Editor items.</p>
+<p>Your SQL query should be designed to return a minimum of 2 columns, (and a maximum of 6 columns). These columns will be used to populate the List Editor items.</p>
 <p>The columns will be mapped in the following order:</p>
 <ol>
 <li><strong>Name</strong> <em>(e.g. item's label)</em></li>
@@ -56,6 +56,7 @@ namespace Umbraco.Community.Contentment.DataEditors
 <li>Description <em>(optional)</em></li>
 <li>Icon <em>(optional)</em></li>
 <li>Disabled <em>(optional)</em></li>
+<li>Group <em>(optional)</em></li>
 </ol>
 <p>If you need assistance with SQL syntax, please refer to this resource: <a href=""https://www.w3schools.com/sql/"" target=""_blank""><strong>w3schools.com/sql</strong></a>.</p>
 </div>", true),
@@ -148,6 +149,9 @@ namespace Umbraco.Community.Contentment.DataEditors
 
                             if (reader.FieldCount > 4)
                                 item.Disabled = reader[4].ToString().TryConvertTo<bool>().Result;
+
+                            if (reader.FieldCount > 5)
+                                item.Group = reader[5].TryConvertTo<string>().Result;
 
                             yield return item;
                         }

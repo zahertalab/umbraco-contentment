@@ -26,7 +26,29 @@ angular.module("umbraco").controller("Umbraco.Community.Contentment.DataEditors.
                 $scope.model.value = $scope.model.value[0];
             }
 
-            vm.items = config.items.slice();
+            vm.groups = { "": [] };
+
+            for (var i = 0; i < config.items.length; i++) {
+
+                var item = config.items[i];
+
+                if (item.hasOwnProperty("group") === false) {
+
+                    // add to empty group
+                    vm.groups[""].push(item);
+
+                } else if (vm.groups.hasOwnProperty(item.group) === false) {
+
+                    // add to new group
+                    vm.groups[item.group] = [item];
+
+                } else {
+
+                    // add to existing group
+                    vm.groups[item.group].push(item);
+
+                }
+            }
 
             vm.showDescriptions = Object.toBoolean(config.showDescriptions);
             vm.showIcons = Object.toBoolean(config.showIcons);

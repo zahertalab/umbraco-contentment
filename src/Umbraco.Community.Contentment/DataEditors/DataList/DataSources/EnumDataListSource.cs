@@ -87,6 +87,7 @@ namespace Umbraco.Community.Contentment.DataEditors
                 {
                     Description = attr?.Description ?? attr2?.Description,
                     Disabled = attr?.Disabled ?? false,
+                    Group = attr?.Group,
                     Icon = attr?.Icon,
                     Name = attr?.Name ?? field.Name.SplitPascalCasing(),
                     Value = attr?.Value ?? field.Name

@@ -8,7 +8,7 @@
             class="umb-dropdown"
             lk-html-attributes="vm.htmlAttributes"
             ng-model="model.value"
-            ng-options="item.value as item.name disable when item.disabled for item in vm.items">
+            ng-options="item.value as item.name group by item.group disable when item.disabled for item in vm.items">
         <option ng-if="vm.allowEmpty" value=""></option>
     </select>
 </div>
