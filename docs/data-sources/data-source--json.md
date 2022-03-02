@@ -4,23 +4,19 @@
 
 ### Data Sources
 
-
-> :rotating_light::rotating_light::rotating_light: **This documentation has not been written yet.** :rotating_light::rotating_light::rotating_light:
-> If you have a desire to contribute back to the Contentment package project, (and you have the time), please consider helping me write the documentation pages for the data-sources.
-> Any discussion, guidance or feedback can be had on issue #145.
-> https://github.com/leekelleher/umbraco-contentment/issues/145
-
-
 #### JSON Data
 
-Configure JSON data to populate the data source.
+<!---Configure JSON data to populate the data source.--->
 
+This data-source enables you to enter the URL of a JSON data source, using it to populate the items of a compatible editor, e.g. [Data List](../editors/data-list.md).
 
 ##### How to configure the editor?
 
-_[TBC]_
+<!---_[TBC]_--->
+
+The configuration of the XML data-source has the following options:
 
 
 ##### What is the value's object-type?
 
-_[TBC]_
+<!---_[TBC]_--->
